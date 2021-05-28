@@ -126,7 +126,7 @@ const findAppointmentsByDistrictWeek = async (
  */
 export const findAppointmentsByPin = (
   pin: string | number,
-  opts: Options
+  opts: Options = {}
 ): Promise<AppointmentResponse> => {
   const { date = new Date(), week = false } = opts;
   if (week) {
@@ -143,7 +143,7 @@ export const findAppointmentsByPin = (
  */
 export const findAppointmentsByDistrict = (
   districtId: number,
-  opts: Options
+  opts: Options = {}
 ): Promise<AppointmentResponse> => {
   const { date = new Date(), week = false } = opts;
   if (week) {

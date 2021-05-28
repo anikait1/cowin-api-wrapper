@@ -42,6 +42,7 @@ export type Appointment = {
   fee_type: string;
   sessions: Session[];
 };
+
 export type Session = {
   session_id: string;
   date: string;
