@@ -6,7 +6,7 @@ import {
   Options,
   State,
   District,
-} from "../@types";
+} from "./@types";
 import { formatDate, mapSessionResponse } from "./format-response";
 
 const URLS = {

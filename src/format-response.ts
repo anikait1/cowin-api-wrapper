@@ -1,4 +1,4 @@
-import { Appointment, SessionResponse } from "../@types";
+import { Appointment, SessionResponse } from "./@types";
 
 
 /**
