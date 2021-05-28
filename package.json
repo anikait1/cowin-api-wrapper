@@ -1,0 +1,23 @@
+{
+  "name": "cowin-api-wrapper",
+  "version": "1.0.0",
+  "description": "API wrapper for COWIN's public API with TypeScript support.",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "dev": "ts-node index.ts",
+    "build": "rm ./dist/* && tsc"
+  },
+  "keywords": ["cowin", "api", "cowin-api", "wrapper"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "@types/superagent": "^4.1.11",
+    "ts-node": "^10.0.0"
+  },
+  "dependencies": {
+    "superagent": "^6.1.0"
+  }
+}
