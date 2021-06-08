@@ -22,7 +22,7 @@
     "wrapper"
   ],
   "author": "Anikait",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^15.6.1",
     "@types/superagent": "^4.1.11",
