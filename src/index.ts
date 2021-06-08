@@ -1,13 +1,5 @@
 import superagent from "superagent";
-import {
-  AppointmentResponse,
-  Appointment,
-  BadRequest,
-  Options,
-  State,
-  District,
-} from "./@types";
-import { formatDate, mapSessionResponse } from "./format-response";
+import { formatDate, mapSessionResponse, Appointment } from "./format-response";
 
 const URLS = {
   BASE_URL: "https://cdn-api.co-vin.in/api/v2",
@@ -169,3 +161,29 @@ export const getDistricts = (stateId: number): Promise<District> => {
   const url = `${URLS.BASE_URL}/${URLS.GET_DISTRICTS}/${stateId}`;
   return superagent.get(url).then((response) => response.body.districts);
 };
+
+type BadRequest = {
+  errorCode: string;
+  error: string;
+};
+
+export type Options = {
+  date?: Date;
+  week?: boolean;
+};
+
+export type AppointmentResponse = {
+  appointments: Appointment[] | null;
+  isError: boolean,
+  error: BadRequest | null;
+}
+
+export type State = {
+  state_id: number,
+  state_name: string
+}
+
+export type District = {
+  district_id: number,
+  district_name: string
+}

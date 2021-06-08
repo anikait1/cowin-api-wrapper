@@ -10,7 +10,7 @@ const cowin = require("cowin-api-wrapper")
 
 // find appointments by pin
 cowin.findAppointmentsByPin(160036, {date: new Date(2021, 4, 29)}).then((response) => {
-  if (respnse.isError) {
+  if (response.isError) {
     console.log(response.error);
   } else {
     console.log(response.appointments);
@@ -20,7 +20,7 @@ cowin.findAppointmentsByPin(160036, {date: new Date(2021, 4, 29)}).then((respons
 // customise your response by passing the options object
 const opts = { date: new Date(), week: true }
 cowin.findAppointmentsByPin(160036, opts).then((response) => {
-  if (respnse.isError) {
+  if (response.isError) {
     console.log(response.error);
   } else {
     console.log(response.appointments);
@@ -30,7 +30,7 @@ cowin.findAppointmentsByPin(160036, opts).then((response) => {
 
 The wrapper aims to provide a consistent interface for fetching the data. The models at Cowin website won't give an accurate representation of the data returned by the API. The SessionResponse represents the API's response when querying for appointments for a single day. To remove discrepancies between the responses we use our custom ```Appointment``` type.
 ```typescript
-export type SessionResponse = {
+type SessionResponse = {
   center_id: number;
   name: string;
   address: string;
@@ -54,7 +54,7 @@ export type SessionResponse = {
   slots: string[];
 };
 
-export type Appointment = {
+type Appointment = {
   center_id: number;
   name: string;
   address: string;
@@ -70,7 +70,7 @@ export type Appointment = {
   sessions: Session[];
 };
 
-export type Session = {
+type Session = {
   session_id: string;
   date: string;
   available_capacity: number;

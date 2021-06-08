@@ -1,6 +1,3 @@
-import { Appointment, SessionResponse } from "./@types";
-
-
 /**
  * Formats the date from 23/5/2021 -> 23-5-2021
  * @param date
@@ -39,3 +36,54 @@ export const mapSessionResponse = ({
     },
   ],
 });
+
+type SessionResponse = {
+  center_id: number;
+  name: string;
+  address: string;
+  state_name: string;
+  district_name: string;
+  block_name: string;
+  pincode: number;
+  from: string;
+  to: string;
+  lat: number;
+  long: number;
+  fee_type: string;
+  session_id: string;
+  date: string;
+  available_capacity_dose1: number;
+  available_capacity_dose2: number;
+  available_capacity: number;
+  fee: string;
+  min_age_limit: number;
+  vaccine: string;
+  slots: string[];
+};
+
+type Session = {
+  session_id: string;
+  date: string;
+  available_capacity: number;
+  min_age_limit: number;
+  vaccine: string;
+  slots: string[];
+  available_capacity_dose1: number;
+  available_capacity_dose2: number;
+};
+
+export type Appointment = {
+  center_id: number;
+  name: string;
+  address: string;
+  state_name: string;
+  district_name: string;
+  block_name: string;
+  pincode: number;
+  lat: number;
+  long: number;
+  from: string;
+  to: string;
+  fee_type: string;
+  sessions: Session[];
+};

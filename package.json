@@ -1,20 +1,26 @@
 {
   "name": "cowin-api-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "API wrapper for COWIN's public API with TypeScript support.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
-  "files": ["dist"],
-  "typings": "index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/anikait1/cowin-api-wrapper"
   },
   "scripts": {
     "dev": "ts-node index.ts",
-    "build": "rm ./dist/* && tsc"
+    "build": "rm -rf ./dist/* && tsc"
   },
-  "keywords": ["cowin", "api", "cowin-api", "wrapper"],
+  "keywords": [
+    "cowin",
+    "api",
+    "cowin-api",
+    "wrapper"
+  ],
   "author": "Anikait",
   "license": "ISC",
   "devDependencies": {
