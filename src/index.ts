@@ -96,7 +96,7 @@ const findAppointmentsByDistrictWeek = async (
   districtId: number,
   date: Date = new Date()
 ): Promise<AppointmentResponse> => {
-  const url = `${URLS.BASE_URL}/${URLS.FIND_BY_DISTRICT}`;
+  const url = `${URLS.BASE_URL}/${URLS.CALENDAR_BY_DISTRICT}`;
 
   try {
     const response = await superagent
@@ -157,7 +157,7 @@ export const getStates = (): Promise<State[]> => {
  * Fetch districts corresponding to the given state id.
  * @param { number } stateId
  */
-export const getDistricts = (stateId: number): Promise<District> => {
+export const getDistricts = (stateId: number): Promise<District[]> => {
   const url = `${URLS.BASE_URL}/${URLS.GET_DISTRICTS}/${stateId}`;
   return superagent.get(url).then((response) => response.body.districts);
 };
